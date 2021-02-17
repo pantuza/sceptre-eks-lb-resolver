@@ -13,6 +13,7 @@ help:
 	@echo "bump_major            Bumps the major part of the current version"
 	@echo
 	@echo "build                 Builds the project as a python wheel"
+	@echo "dry_release           Runs all steps for releasing but sends to test PyPi"
 	@echo "release               Releases a new version on PyPI Index"
 	@echo "clean                 Cleans the project build and release files"
 	@echo
@@ -35,7 +36,9 @@ bump_major:
 build:
 	python3 setup.py sdist bdist_wheel
 
-release:
+dry_release: clean check build twine_check test_release
+
+release: clean check build twine_check
 	twine upload dist/*
 
 clean:
