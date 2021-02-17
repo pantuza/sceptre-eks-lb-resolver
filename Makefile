@@ -39,7 +39,7 @@ release:
 	twine upload dist/*
 
 clean:
-	rm -rf build/ dist/ sceptre_eks_lb_resolver.egg-info/
+	rm -rf build/ dist/ sceptre_eks_lb_resolver.egg-info/ .eggs/
 
 
 twine_check:
