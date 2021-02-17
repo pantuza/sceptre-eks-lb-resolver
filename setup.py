@@ -61,8 +61,8 @@ setup(
     },
     include_package_data=True,
     zip_safe=False,
-    keywords="sceptre, sceptre-resolver, AWS EKS, k8s service load balancer," \
-             "k8s lb URI, Load Balancer URI, Kubernetes Load Balancer URI, " \
+    keywords="sceptre, sceptre-resolver, AWS EKS, k8s service load balancer,"
+             "k8s lb URI, Load Balancer URI, Kubernetes Load Balancer URI, "
              "k8s lb dns, k8s service dns",
     classifiers=[
         "Intended Audience :: Developers",
