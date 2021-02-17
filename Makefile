@@ -36,7 +36,7 @@ twine_check:
 	twine check dist/*
 
 test_release:
-	twine upload --repository-url https://test.pypi.org/project/eks-lb-uri-resolver dist/*
+	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 release:
 	twine upload dist/*
