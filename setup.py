@@ -28,6 +28,8 @@ with open("README.md") as readme_file:
 
 install_requirements = [
     "packaging==16.8",
+    "sceptre>=2.4.0",
+    "kubernetes>=12.0.1",
 ]
 
 test_requirements = [
@@ -35,7 +37,7 @@ test_requirements = [
 ]
 
 setup_requirements = [
-    "pytest-runner>=3"
+    "pytest-runner>=3",
 ]
 
 setup(
@@ -78,6 +80,6 @@ setup(
     tests_require=test_requirements,
     setup_requires=setup_requirements,
     extras_require={
-        "test": test_requirements
+        "test": test_requirements,
     }
 )
