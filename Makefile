@@ -28,6 +28,7 @@ bump_minor:
 bump_major:
 	bumpversion major --verbose
 
+.PHONY: build
 build:
 	python3 setup.py sdist bdist_wheel
 
