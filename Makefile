@@ -24,12 +24,15 @@ help:
 
 bump_patch:
 	bumpversion patch --verbose
+	git push origin main --tags
 
 bump_minor:
 	bumpversion minor --verbose
+	git push origin main --tags
 
 bump_major:
 	bumpversion major --verbose
+	git push origin main --tags
 
 
 .PHONY: build
