@@ -49,7 +49,7 @@ class EksLbDns(Resolver):
         kubernetes remote cluster
         """
 
-        super(K8sLbDns, self).__init__(*args, **kwargs)
+        super(EksLbDns, self).__init__(*args, **kwargs)
         self.load_args()
 
         config.load_kube_config()
