@@ -1,0 +1,56 @@
+name: Continuous Integration and Continuous Delivery
+
+on:
+  # Run at least once a day, indepent of when a PR is sent.
+  # Scheduled to every day at 4 AM
+  schedule:
+    - cron: "0 4 * * *"
+
+  push:
+    branches: [ release, main ]
+
+  pull_request:
+    branches: [ main ]
+
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install local dependencies
+        run: make deps
+
+      - name: Build python package
+        run: make build
+
+      - name: Validate build files
+        run: make ci_start
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install local dependencies
+        run: make deps
+
+      - name: Check Python code style
+        run: make check
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install local dependencies
+        run: make deps
+
+      - name: Run tests
+        run: make test
