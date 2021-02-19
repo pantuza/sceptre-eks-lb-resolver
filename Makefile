@@ -63,5 +63,5 @@ test:
 	pytest -ra -q -v tests/*.py
 
 deps: requirements.txt
-	pip3 install pip --upgrade
+	pip3 install --upgrade pip wheel
 	pip3 install -r $<
