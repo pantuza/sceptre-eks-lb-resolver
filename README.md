@@ -9,7 +9,7 @@
 [Sceptre](https://github.com/Sceptre/sceptre) custom resolver you can use to dynamically read [AWS EKS](https://aws.amazon.com/eks/) 
 Load Balancer URI into your Sceptre config. 
 
-It reads services inside your Kubernetes cluster that type is `LoadBalancer` and returns its External DNS/URI.
+It reads services inside your Kubernetes cluster with type `LoadBalancer` and returns its External DNS/URI.
 
 
 ## Installation
@@ -37,6 +37,13 @@ You can use your Sceptre variables as arguments for the resolver:
   ...
   LoadBalancerURI: !eks_lb_uri -n {{ var.namespace }} -s {{ var.service }}
 ```
+
+So with that in place, when you run `sceptre launch --yes dev/us-east-1`, it
+will call the resolver and assign the k8s load balancer URI to the Sceptre
+variable `LoadBalancerURI` at runtime.
+
+> Make sure to guarantee that you are properly authenticated within AWS
+
 
 
 ## Syntax
