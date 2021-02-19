@@ -1,5 +1,6 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![PyPI version](https://badge.fury.io/py/sceptre-eks-lb-resolver.svg)](https://badge.fury.io/py/sceptre-eks-lb-resolver)
+[![CI/CD](https://github.com/pantuza/sceptre-eks-lb-resolver/actions/workflows/main.yaml/badge.svg)](https://github.com/pantuza/sceptre-eks-lb-resolver/actions/workflows/main.yaml)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/sceptre-eks-lb-resolver)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/sceptre-eks-lb-resolver.svg)](https://pypi.python.org/pypi/sceptre-eks-lb-resolver/)
 [![PyPI license](https://img.shields.io/pypi/l/sceptre-eks-lb-resolver.svg)](https://pypi.python.org/pypi/sceptre-eks-lb-resolver/)
