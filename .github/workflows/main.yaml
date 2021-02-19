@@ -29,7 +29,7 @@ jobs:
         run: make build
 
       - name: Validate build files
-        run: make ci_start
+        run: make twine_check
 
   lint:
     runs-on: ubuntu-latest
