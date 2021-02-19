@@ -20,6 +20,8 @@ help:
 	@echo "twine_check           Tries validating all build files with twine"
 	@echo "test_release          Tries releasing a new version to Test Pypi"
 	@echo "check                 Runs linters and checkers of files"
+	@echo "test                  Runs Python tests using pytest"
+	@echo "deps                  Install requirements.txt dependencies"
 	@echo
 
 bump_patch:
@@ -56,3 +58,9 @@ test_release:
 
 check:
 	@pycodestyle	
+
+test:
+	pytest -ra -q -v tests/*.py
+
+deps: requirements.txt
+	pip3 install -r $<
