@@ -6,10 +6,10 @@
 [![PyPI license](https://img.shields.io/pypi/l/sceptre-eks-lb-resolver.svg)](https://pypi.python.org/pypi/sceptre-eks-lb-resolver/)
 
 # sceptre-eks-lb-resolver
-[Sceptre](https://github.com/Sceptre/sceptre) custom resolver you can use to dynamically read [AWS EKS](https://aws.amazon.com/eks/) 
-Load Balancer URI into your Sceptre config. 
+[Sceptre](https://github.com/Sceptre/sceptre) custom [resolver](https://sceptre.cloudreach.com/2.4.0/docs/resolvers.html#custom-resolvers) you can 
+use to dynamically read [AWS EKS](https://aws.amazon.com/eks/) Load Balancer URI into your Sceptre [config](https://sceptre.cloudreach.com/2.3.0/docs/stack_config.html). 
 
-It reads services inside your Kubernetes cluster with type `LoadBalancer` and returns its External DNS/URI.
+It reads [services](https://kubernetes.io/docs/concepts/services-networking/service/) inside your Kubernetes cluster with type `LoadBalancer` and returns its External DNS/URI.
 
 
 ## Installation
@@ -31,7 +31,13 @@ parameters:
   LoadBalancerURI: !eks_lb_uri -n backend -s data_api 
 ```
 
-You can use your Sceptre variables as arguments for the resolver:
+Will resolve to something like:
+
+```yaml
+LoadBalancerURI: "XXXXXXXXXXX.us-east-1.elb.amazonaws.com"
+```
+
+You can use your Sceptre [variables](https://sceptre.cloudreach.com/2.4.0/docs/stack_group_config.html#var) as arguments for the resolver:
 
 ```yaml
   ...
