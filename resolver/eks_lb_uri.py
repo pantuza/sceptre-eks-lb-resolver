@@ -10,7 +10,7 @@ from kubernetes import config
 __author__ = "Gustavo Pantuza <gustavopantuza@gmail.com>"
 
 
-class EksLbDns(Resolver):
+class EksLbUri(Resolver):
     """
     Resolver for getting Load Balancer DNS on a Kubernetes resource of type
     Service LoadBalancer
@@ -49,7 +49,7 @@ class EksLbDns(Resolver):
         kubernetes remote cluster
         """
 
-        super(EksLbDns, self).__init__(*args, **kwargs)
+        super(EksLbUri, self).__init__(*args, **kwargs)
         self.load_args()
 
         config.load_kube_config()
